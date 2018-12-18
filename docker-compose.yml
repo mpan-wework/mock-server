@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  mockserver:
+    container_name: server
+    build:
+      context: .
+      dockerfile: Dockerfile.mock
+    ports:
+      - "9927:3000"
+    volumes:
+      - ./data:/app/data
+    working_dir: /app
+    command: /bin/sh -c "json-server data/db.json --config data/json-server.json --routes data/routes.json"
+

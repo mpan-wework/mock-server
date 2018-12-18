@@ -1,0 +1,2 @@
+FROM node:11.4.0-alpine
+RUN npm i -g json-server
